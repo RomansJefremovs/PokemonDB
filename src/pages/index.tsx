@@ -18,17 +18,18 @@ import {
     getPokemonByID,
     getPokemonByName, getSpeciesByID
 } from "@/common/hooks/pokenodeTS";
+import NavTabs from "@/common/components/atoms/NavTabs";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const [card,setCard] = useState<Card>()
-    const [pokemon,setPoke] = useState<Pokemon>()
-    const [evo,setEvo] = useState<EvolutionChain>()
-    const [spec,setSpec] = useState<PokemonSpecies>()
+    // const [card,setCard] = useState<Card>()
+    // const [pokemon,setPoke] = useState<Pokemon>()
+    // const [evo,setEvo] = useState<EvolutionChain>()
+    // const [spec,setSpec] = useState<PokemonSpecies>()
     // const [cards,setCard] = useState<Card[]>()
     // const [sets,setSets] = useState<Set[]>()
-    const [sets,setSets] = useState<Set>()
-    const getCards = async ()=>{
+    // const [sets,setSets] = useState<Set>()
+    // const getCards = async ()=>{
         // const temp = await getCardById('g1-1')
         // const temp = await searchCardsByQuery('charizard',3)
         // const temp = await getCardsForHomePage()
@@ -40,27 +41,28 @@ export default function Home() {
         // setSets(temp)
         // const temp = await getPokemonByName('charizard')
         // const temp = await getPokemonByID(1)
-        const temp = await getEvolutionChangeByID(1)
-        setSpec(await getSpeciesByID(1))
-        setEvo(temp)
+        // const temp = await getEvolutionChangeByID(1)
+        // setSpec(await getSpeciesByID(1))
+        // setEvo(temp)
         // setPoke(temp)
-    }
+    // }
     // console.log(card)
     // console.log(sets)
     // console.log(pokemon)
-    console.log(evo)
-    console.log(spec)
-   useEffect(()=>{
-        getCards()
-   },[])
+   //  console.log(evo)
+   //  console.log(spec)
+   // useEffect(()=>{
+   //      getCards()
+   // },[])
   return (
     <>
       <main >
         <div >
             <p>Hello world</p>
-            <>{card != undefined ? card.name : 'Nope'}</>
-            <>{pokemon != undefined ? pokemon.name : 'Nope'}</>
-            <>{evo != undefined ? evo.chain.evolves_to[0].evolves_to[0].species.name : 'Nope'}</>
+            <NavTabs/>
+            {/*<>{card != undefined ? card.name : 'Nope'}</>*/}
+            {/*<>{pokemon != undefined ? pokemon.name : 'Nope'}</>*/}
+            {/*<>{evo != undefined ? evo.chain.evolves_to[0].evolves_to[0].species.name : 'Nope'}</>*/}
             {/*<>{cards != undefined ? cards.map(card=> <p>{card.name}</p>) : 'Nope'}</>*/}
             {/*<>{sets != undefined ? sets.map(set => <p>{set.name}</p>) : 'Nope'}</>*/}
             {/*<>{sets != undefined ? sets.name : 'Nope'}</>*/}
