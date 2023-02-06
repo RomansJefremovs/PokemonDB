@@ -26,7 +26,7 @@ const NavTabs = () => {
 
     return (
 
-            <Tabs sx={{}}  value={value} onChange={handleChange}
+            <Tabs className={orbitron.className} value={value} onChange={handleChange}
             >
                 <Tab className={orbitron.className} label="Home" sx={style} />
                 <Tab className={orbitron.className} label="Cards" sx={style}  />
