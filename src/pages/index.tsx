@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
+import {Inter, Orbitron} from '@next/font/google'
 import {
     getCardById,
     getCardsForHomePage, getSetById,
@@ -19,9 +19,11 @@ import {
     getPokemonByName, getSpeciesByID
 } from "@/common/hooks/pokenodeTS";
 import NavTabs from "@/common/components/atoms/NavTabs";
-const inter = Inter({ subsets: ['latin'] })
+import {Text, useTheme} from "@nextui-org/react";
+
 
 export default function Home() {
+    const {theme} = useTheme()
     // const [card,setCard] = useState<Card>()
     // const [pokemon,setPoke] = useState<Pokemon>()
     // const [evo,setEvo] = useState<EvolutionChain>()
@@ -56,9 +58,8 @@ export default function Home() {
    // },[])
   return (
     <>
-      <main >
+      <main>
         <div >
-            <p>Hello world</p>
             <NavTabs/>
             {/*<>{card != undefined ? card.name : 'Nope'}</>*/}
             {/*<>{pokemon != undefined ? pokemon.name : 'Nope'}</>*/}

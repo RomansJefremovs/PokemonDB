@@ -1,39 +1,35 @@
-import React from "react";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import {Orbitron} from "@next/font/google";
-import {createMuiTheme, styled} from '@mui/material/styles';
-import {ThemeProvider} from "@mui/system";
-const orbitron = Orbitron({
-    weight:'900',
-    style:"normal",
-    subsets:['latin']})
-const theme = createMuiTheme({
-//
-})
-const NavTabs = () => {
-    const [value, setValue] = React.useState(3);
+import React, {useState} from "react";
+import {Navbar, Text} from "@nextui-org/react";
+import PokemonLogo from '../../assets/Pokémon_logo.png'
+import Image from "next/image";
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
-    const style = {
-        color:"black",
-        '&.Mui-selected': {
-            color: 'black'
-        }
+const NavTabs = () => {
+    const [isActive, setIsActive] = useState<boolean>()
+    const handleClickChange = () =>{
+        setIsActive(!isActive)
     }
 
     return (
-
-            <Tabs sx={{}}  value={value} onChange={handleChange}
-            >
-                <Tab className={orbitron.className} label="Home" sx={style} />
-                <Tab className={orbitron.className} label="Cards" sx={style}  />
-                <Tab className={orbitron.className} label="Sets" sx={style} />
-                <Tab className={orbitron.className} label="Pokemons" sx={style} />
-            </Tabs>
-    );
+        <Navbar  variant={'sticky'}>
+            <Navbar.Brand>
+                <Image src={PokemonLogo} alt={'PokemonDB'} width={'120'} height={'50'}/>
+                <Text css={{
+                    paddingTop:'$15'
+                }}  weight={'extrabold'}>DB</Text>
+            </Navbar.Brand>
+            <Navbar.Content enableCursorHighlight
+                            hideIn="xs"
+                            variant="highlight"
+                            activeColor="default">
+                <Navbar.Link  href="#">Features</Navbar.Link>
+                <Navbar.Link href="#">
+                    Customers
+                </Navbar.Link>
+                <Navbar.Link href="#">Pricing</Navbar.Link>
+                <Navbar.Link href="#">Company</Navbar.Link>
+            </Navbar.Content>
+        </Navbar>
+    )
 }
 
 export default NavTabs
