@@ -7,10 +7,6 @@ import {theme} from "@/styles/theme";
 import {NextPage} from "next";
 
 
-
-
-
-
 const App: NextPage<AppProps> = (props: AppProps) => {
     const { Component, pageProps } = props;
     return (

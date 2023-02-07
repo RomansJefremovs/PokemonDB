@@ -16,5 +16,8 @@ export const globalStyles = globalCss({
     },
     'a':{
         fontFamily: '$orbitron'
+    },
+    'input':{
+        fontFamily: '$orbitron'
     }
 });
