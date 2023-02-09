@@ -19,7 +19,11 @@ import {
     getPokemonByName, getSpeciesByID
 } from "@/common/hooks/pokenodeTS";
 import NavTabs from "@/common/components/atoms/NavTabs";
-import {Text, useTheme} from "@nextui-org/react";
+import {Container, Text, useTheme} from "@nextui-org/react";
+import SliderItem from "@/common/components/atoms/SliderItem";
+// import PokemonLogo from '../../assets/Pokémon_logo.png'
+import PokemonLogo from '../../src/common/assets/Pokémon_logo.png'
+import Slider from "@/common/components/organs/Slider/Slider";
 
 
 export default function Home() {
@@ -61,6 +65,10 @@ export default function Home() {
       <main>
         <div >
             <NavTabs/>
+            <Container xs>
+                <SliderItem className={''} img={PokemonLogo}  title={'Charizard'}/>
+                <Slider/>
+            </Container>
             {/*<>{card != undefined ? card.name : 'Nope'}</>*/}
             {/*<>{pokemon != undefined ? pokemon.name : 'Nope'}</>*/}
             {/*<>{evo != undefined ? evo.chain.evolves_to[0].evolves_to[0].species.name : 'Nope'}</>*/}
