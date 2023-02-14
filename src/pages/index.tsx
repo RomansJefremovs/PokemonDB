@@ -25,7 +25,6 @@ import SliderItem from "@/common/components/atoms/SliderItem";
 import PokemonLogo from '../../src/common/assets/Pokémon_logo.png'
 import Slider from "@/common/components/organs/Slider/Slider";
 
-
 export default function Home() {
     const {theme} = useTheme()
     // const [card,setCard] = useState<Card>()
@@ -66,8 +65,8 @@ export default function Home() {
         <div >
             <NavTabs/>
             <Container xs>
-                <SliderItem className={''} img={PokemonLogo}  title={'Charizard'}/>
-                <Slider/>
+                {/*<SliderItem className={''} img={PokemonLogo.src}  title={'Charizard'}/>*/}
+                    <Slider/>
             </Container>
             {/*<>{card != undefined ? card.name : 'Nope'}</>*/}
             {/*<>{pokemon != undefined ? pokemon.name : 'Nope'}</>*/}

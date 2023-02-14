@@ -5,12 +5,15 @@ import PokemonLogo from '../../assets/Pokémon_logo.png'
 const SliderItem = ({className, img,title}:SliderItemProps) => {
 
     return(
-        <Card css={{
-            ai:"center"
-        }} className={className} >
-            <Card.Image src={img.src}/>
-            <Text size={'$2xl'}>{title}</Text>
-        </Card>
+        <div className={className}>
+            <Card css={{
+                // width:"100%",
+                ai:"center"
+            }} >
+
+                <Text size={'$2xl'}>{title}</Text>
+            </Card>
+        </div>
     )
 }
 export default SliderItem

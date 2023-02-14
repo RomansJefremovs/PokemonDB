@@ -7,7 +7,7 @@ import {Set} from 'pokemon-tcg-sdk-typescript/dist/interfaces/set'
 //Get cards for main page
 export const getCardsForHomePage = async():Promise<Card[]>=>{
     const pageNumber = Math.random() * 71
-    let params = {pageSize:4, page: pageNumber}
+    let params = {pageSize:6, page: pageNumber}
     return await PokemonTCG.findCardsByQueries(params)
 }
 //Get cards for cards page
@@ -30,7 +30,7 @@ export const getCardById = async (id:string):Promise<Card> => {
 //Get sets for main page
 export const getSetsForHomePage = async ():Promise<Set[]> => {
     const pageNumber = Math.random() * 36
-    let params = {pageSize: 4, page: pageNumber}
+    let params = {pageSize: 6, page: pageNumber}
    return await PokemonTCG.findSetsByQueries(params)
 }
 //Get cards for cards page
